@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ .container{
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    background-color: bisque;
+    padding: 12px;
+
+    
+ }
+ @media only screen and (max-width: 600px) {
+    .container {
+      background-color: lightblue;
+    }
+}
