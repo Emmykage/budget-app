@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_09_214455) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_10_135723) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,16 +24,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_214455) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
-  create_table "category_transactions", force: :cascade do |t|
+  create_table "contracts", force: :cascade do |t|
     t.bigint "category_id", null: false
-    t.bigint "transaction_id", null: false
+    t.bigint "purchase_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_category_transactions_on_category_id"
-    t.index ["transaction_id"], name: "index_category_transactions_on_transaction_id"
+    t.index ["category_id"], name: "index_contracts_on_category_id"
+    t.index ["purchase_id"], name: "index_contracts_on_purchase_id"
   end
 
-  create_table "transactions", force: :cascade do |t|
+  create_table "purchases", force: :cascade do |t|
     t.string "name"
     t.float "amount"
     t.datetime "created_at", null: false
@@ -48,6 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_214455) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "category_transactions", "categories"
-  add_foreign_key "category_transactions", "transactions"
+  add_foreign_key "contracts", "categories"
+  add_foreign_key "contracts", "purchases"
 end

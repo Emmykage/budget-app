@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-    has_many :categories
-    has_many :category_transactions, through: :category
-    has_many :transactions, through: :category_transaction
+  has_many :categories
+  has_many :contracts, through: :category
+  has_many :purchases, through: :contract
 end

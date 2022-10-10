@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  resources :contracts
+  resources :purchases
   resources :category_transactions
   resources :transactions
   resources :categories

@@ -1,7 +1,7 @@
-<div id="<%= dom_id transaction %>">
+<li id="<%= dom_id transaction %>" class="trans-list">
+
   <p>
-    <strong>Name:</strong>
-    <%= transaction.name %>
+   <%= link_to transaction.name, transaction %>
   </p>
 
   <p>
@@ -9,4 +9,4 @@
     <%= transaction.amount %>
   </p>
 
-</div>
+</li>
