@@ -14,17 +14,68 @@
  *= require_self
  */
 
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+ *{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+ }
  .container{
     width: 100%;
     max-width: 1400px;
     margin: auto;
     background-color: bisque;
-    padding: 12px;
+    /* padding: 12px; */
 
     
  }
+ .container a{
+    text-decoration: none;
+ }
+ #categories{
+    padding: 0;
+ }
+ .cat-list{
+    display: flex;
+    justify-content: space-between;
+    background-color: brown;
+    padding: 10px 6px;
+    align-items: center;
+    margin: 12px 2px;
+}
  @media only screen and (max-width: 600px) {
     .container {
-      background-color: lightblue;
+      /* background-color: lightblue; */
+      /* padding: 0; */
     }
+    h1{
+        text-align: center;
+    }
+
+    .cat-list .img{
+        /* width: 50px; */
+        height: 50px;
+        width: 50px;
+        background-color: blue;
+    }
+    .cat-list img{
+        width: 100%;
+        background-color: blueviolet;
+        flex: 1;
+    }
+
+    .mid{
+        /* background-color: aliceblue; */
+        flex: 3;
+        padding: 6px 6px ;
+        height: 100%;
+    }
+    .mid h3{
+        margin: 0 0 12px;
+       
+    }
+    /* .total{
+        flex: 1;
+    } */
 }
