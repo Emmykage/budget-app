@@ -2,12 +2,12 @@
 
 <h1>Purchases</h1>
 
-<div id="purchases">
+<ul id="purchases" class="group">
   <% @purchases.each do |purchase| %>
     <%= render purchase %>
     
   <% end %>
-</div>
+</ul>
 
 
  <%= link_to "Add new Transaction", new_group_purchase_path %> 

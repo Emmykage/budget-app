@@ -1,17 +1,21 @@
-<div id="<%= dom_id purchase %>">
-  <p>
+<li id="<%= dom_id purchase %>" class="group-list border">
+  <div class="name-div">
     <strong>Name:</strong>
     <%= purchase.name %>
-  </p>
+  </div>
 
-  <p>
+  <div class="amount-div">
     <strong>Amount:</strong>
     <%= purchase.amount %>
-  </p>
+  </div>
 
-  <p>
+  <%
+=begin%>
+ <div>
     <strong>User:</strong>
     <%= purchase.user_id %>
-  </p>
+  </div> 
+<%
+=end%>
 
- </div>
+ </li>

@@ -21,6 +21,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
  }
+ h1{
+;
+ }
  a{
     text-decoration: none;
  }
@@ -29,12 +32,13 @@
     width: 100%;
     max-width: 1400px;
     margin: auto;
-    
-
-    
+       
  }
-
- nav{
+ .groups{
+    max-width: 1200px ;
+    border: 1px solid black
+  }
+   nav{
     padding: 12px;
     background-color: rgb(104, 230, 230);
     display: flex;
@@ -45,15 +49,46 @@
  #categories{
     padding: 0;
  }
- .cat-list, .trans-list{
+ .group-list, .trans-list{
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    /* background-color: brown; */
     padding: 10px 6px;
+    gap: 2%;
     align-items: center;
     margin: 12px 2px;
 }
+.group-list .img{
+    width: 140px;
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+.group-list img{
+    width: 100%;
+}
+.mid{
 
+    flex: 3;
+    padding: 6px 6px ;
+    height: 100%;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.3);
+    /* background-color: beige; */
+}
+.footer-btn{
+    text-align: center;
+}
+.footer-btn a{
+    font-size: 34px;
+}
+.name-div, .amount-div{
+    flex: 1;
+}
+.border{
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.3);
+}
 
  @media only screen and (max-width: 600px) {
     .container {
@@ -64,17 +99,13 @@
         text-align: center;
     }
 
-    .cat-list .img{
+    .group-list .img{
         /* width: 50px; */
         height: 50px;
         width: 50px;
         /* background-color: blue; */
     }
-    .cat-list img{
-        width: 100%;
-        /* background-color: blueviolet; */
-        flex: 1;
-    }
+    
 
     .mid{
         /* background-color: aliceblue; */
