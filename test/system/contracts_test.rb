@@ -16,7 +16,7 @@ class ContractsTest < ApplicationSystemTestCase
     visit contracts_url
     click_on 'New contract'
 
-    fill_in 'Category', with: @contract.category_id
+    fill_in 'Group', with: @contract.group_id
     fill_in 'Purchase', with: @contract.purchase_id
     click_on 'Create Contract'
 
@@ -28,7 +28,7 @@ class ContractsTest < ApplicationSystemTestCase
     visit contract_url(@contract)
     click_on 'Edit this contract', match: :first
 
-    fill_in 'Category', with: @contract.category_id
+    fill_in 'Group', with: @contract.group_id
     fill_in 'Purchase', with: @contract.purchase_id
     click_on 'Update Contract'
 

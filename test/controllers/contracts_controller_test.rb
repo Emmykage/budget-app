@@ -19,8 +19,7 @@ class ContractsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create contract' do
     assert_difference('Contract.count') do
-      post contracts_url,
-           params: { contract: { category_id: @contract.category_id, purchase_id: @contract.purchase_id } }
+      post contracts_url, params: { contract: { group_id: @contract.group_id, purchase_id: @contract.purchase_id } }
     end
 
     assert_redirected_to contract_url(Contract.last)
@@ -38,7 +37,7 @@ class ContractsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update contract' do
     patch contract_url(@contract),
-          params: { contract: { category_id: @contract.category_id, purchase_id: @contract.purchase_id } }
+          params: { contract: { group_id: @contract.group_id, purchase_id: @contract.purchase_id } }
     assert_redirected_to contract_url(@contract)
   end
 
