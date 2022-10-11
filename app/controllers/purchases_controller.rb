@@ -5,7 +5,11 @@ class PurchasesController < ApplicationController
 
   # GET /purchases or /purchases.json
   def index
-    @purchases = Purchase.all
+    # @purchases = Purchase.all
+
+    @group = Group.find(params[:id])
+    @purchases = @group.purchases.order('created_at DESC')
+    @total = @purchases.sum(:amount)
   end
 
   # GET /purchases/1 or /purchases/1.json
@@ -21,11 +25,11 @@ class PurchasesController < ApplicationController
 
   # POST /purchases or /purchases.json
   def create
-    @purchase = Purchase.new(purchase_params)
+    @purchase = current_user.purchases.new(purchase_params)
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to purchase_url(@purchase), notice: 'Purchase was successfully created.' }
+        format.html { redirect_to purchases_url(@purchase), notice: 'Purchase was successfully created.' }
         format.json { render :show, status: :created, location: @purchase }
       else
         format.html { render :new, status: :unprocessable_entity }

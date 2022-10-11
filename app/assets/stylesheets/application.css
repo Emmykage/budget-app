@@ -72,12 +72,11 @@
         flex: 3;
         padding: 6px 6px ;
         height: 100%;
+        background-color: beige;
     }
     .mid h3{
         margin: 0 0 12px;
        
     }
-    /* .total{
-        flex: 1;
-    } */
+   
 }

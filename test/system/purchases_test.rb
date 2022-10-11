@@ -17,7 +17,9 @@ class PurchasesTest < ApplicationSystemTestCase
     click_on 'New purchase'
 
     fill_in 'Amount', with: @purchase.amount
+    fill_in 'Group', with: @purchase.group_id
     fill_in 'Name', with: @purchase.name
+    fill_in 'User', with: @purchase.user_id
     click_on 'Create Purchase'
 
     assert_text 'Purchase was successfully created'
@@ -29,7 +31,9 @@ class PurchasesTest < ApplicationSystemTestCase
     click_on 'Edit this purchase', match: :first
 
     fill_in 'Amount', with: @purchase.amount
+    fill_in 'Group', with: @purchase.group_id
     fill_in 'Name', with: @purchase.name
+    fill_in 'User', with: @purchase.user_id
     click_on 'Update Purchase'
 
     assert_text 'Purchase was successfully updated'

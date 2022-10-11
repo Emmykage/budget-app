@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  amount: 1.5
+  icon: MyString
   user: one
-  group: one
+  purchase: one
 
 two:
   name: MyString
-  amount: 1.5
+  icon: MyString
   user: two
-  group: two
+  purchase: two
