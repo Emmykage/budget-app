@@ -21,9 +21,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
  }
- h1{
-;
- }
+nav{
+    padding-left: 142px
+}
  a{
     text-decoration: none;
  }
@@ -85,6 +85,7 @@
 }
 .name-div, .amount-div{
     flex: 1;
+    padding: 2rem 0;
 }
 .border{
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.3);
