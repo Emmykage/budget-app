@@ -73,6 +73,7 @@ class PurchasesController < ApplicationController
   def purchase_params
     params.require(:purchase).permit(:name, :amount)
   end
+
   def set_contract(group, purchase)
     Contract.create(group_id: group, purchase_id: purchase)
   end

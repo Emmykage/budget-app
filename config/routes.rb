@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users
   resources :contracts
   resources :groups, only: %i[index show new create] do
     resources :purchases, only: %i[index new create]
