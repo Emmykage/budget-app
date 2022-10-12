@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group = current_user.groups.new(group_params)
-
+    before_action :authenticate_user!
     respond_to do |format|
       if @group.save
         format.html { redirect_to groups_url, notice: 'Group was successfully created.' }

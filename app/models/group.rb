@@ -9,7 +9,5 @@ class Group < ApplicationRecord
   validates :name, presence: true
   def sum_total
     contracts.includes([:purchase])
-
   end
-
 end

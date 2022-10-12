@@ -2,7 +2,7 @@
 
 class ContractsController < ApplicationController
   before_action :set_contract, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!
   # GET /contracts or /contracts.json
   def index
     @contracts = Contract.all
