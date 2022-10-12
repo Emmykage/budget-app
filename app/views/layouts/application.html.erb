@@ -13,21 +13,10 @@
   <body>
   <header>
    <nav>
-  
- <a href="/groups"><%= image_tag("coin.png",  width: '80px') %></a>  
-   <h1><a href="/groups">CoinApp<a></h1>
-   <div>
-    <i class="fa-solid fa-bars"></i>
+    <div class="logo-div">
+      <a href="/groups"><%= image_tag("coin.png",  width: '80px') %>CoinApp</a>  
     </div>
-  </nav> 
-
-</header>
-   
-  <div class="container">
-     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
         <ul class="instruct">
         <li><%= link_to 'Home', groups_path %></li>
         <li><%= button_to "sign out", destroy_user_session_path, { method: :delete, data: { turbo: false}} %></li>
@@ -37,6 +26,16 @@
       <%= link_to "Sign up", new_user_registration_path %>
       <%end%>
 
+    </div>
+  </nav> 
+
+</header>
+   
+  <div class="container">
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+      
    <div class="sub-contain">
     <%= yield %>
     </div>
