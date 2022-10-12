@@ -57,6 +57,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'cancancan', '~> 3.4'
   gem 'devise'
   gem 'letter_opener'
   gem 'web-console'

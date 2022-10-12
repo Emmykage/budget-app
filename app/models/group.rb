@@ -7,4 +7,9 @@ class Group < ApplicationRecord
   # has_and_belongs_to_many :purchases, optional: true
 
   validates :name, presence: true
+  def sum_total
+    contracts.includes([:purchase])
+
+  end
+
 end
