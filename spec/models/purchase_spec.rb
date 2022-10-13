@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Purchase, type: :model do
   subject do
-    test_user = User.create(name: 'morris', id: 2)
+    User.create(name: 'morris', id: 2)
     Purchase.new(user_id: 2, name: 'pen', amount: 24)
   end
   before { subject.save }

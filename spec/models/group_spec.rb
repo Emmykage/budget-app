@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   subject do
-    test_user = User.create(name: 'morris', id: 1)
+    User.create(name: 'morris', id: 1)
     Group.new(user_id: 1, name: 'office', icon: 'photo', id: 1)
   end
   before { subject.save }
@@ -14,5 +14,4 @@ RSpec.describe Group, type: :model do
       expect(subject).to_not be_valid
     end
   end
-
 end
