@@ -2,8 +2,12 @@
 <li id="<%= dom_id group %>" class="group-list">
 
   <div class="img">
- 
-    <img src=<%= group.icon %> />
+    <%= group.icon %>
+    <%
+=begin%>
+ <img src=<%= group.icon %> /> 
+<%
+=end%>
   </div>
 
   <div class="mid list-mid">

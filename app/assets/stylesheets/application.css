@@ -125,7 +125,13 @@ nav ul li button{
     border: 1px solid black;
     border-radius: 50%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
+}
+.icon{
+    width: 100%;
 }
 .group-list img{
     width: 100%;
