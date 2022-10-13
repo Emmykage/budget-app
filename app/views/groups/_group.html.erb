@@ -14,7 +14,11 @@
       <span>Total: <%= group.sum_total.sum(:amount) %></span>
     </div>
 
-    <%=button_to 'Delete', group_path(group.id), method: :delete %>
+    <%
+=begin%>
+ <%=button_to 'Delete', group_path(group.id), method: :delete %> 
+<%
+=end%>
   </div>
 
 </li>
