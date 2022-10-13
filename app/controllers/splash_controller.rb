@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SplashController < ApplicationController
   def index
     redirect_to groups_path if user_signed_in?
