@@ -301,7 +301,9 @@ nav ul li button{
  .group{
  padding: 0;
   }
- 
+ .group h2{
+    text-align: center;
+ }
  
  
  .group-list, .trans-list{
