@@ -1,83 +1,112 @@
-# Ruby on Rails Course
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+# Budget-app
 
-## Set-up GitHub Actions
+> You will create a Ruby on Rails application that allows the user to:
 
-This GitHub Action is going to run [Rubocop](https://docs.rubocop.org/en/stable/) and [Stylelint](https://stylelint.io/) to help you find style issues.
+> - register and log in, so that the data is private to them.
+> - introduce new transactions associated with a category.
+> - see the money spent on each category.
 
-[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
+## Built With
 
-[Rubocop](https://docs.rubocop.org/en/stable/) is a Ruby static code analyzer (a.k.a. linter) and code formatter. It will enforce many of the guidelines outlined in the community [Ruby Style Guide](https://rubystyle.guide/).
+- Ruby on Rails
+- Boostrap
+- Postgres SQL
+- Rspec
+- Capybara
 
-Please do the following **steps in this order**:
+## Live Demo (if available)
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
+[NA]()
 
-![gh actions checks](../assets/images/gh-actions-rubocop-stylelint-checks.png)
+## Getting Started
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
+To get a local copy up and running follow these simple example steps.
 
-![gh actions failing checks](../assets/images/gh-actions-rubocop-failing-checks.png)
+### Prerequisites
 
-## Set-up linters in your local env
+- You should have ruby installed in your machine, you can follow the steps given by the [official documentation](https://www.ruby-lang.org/en/documentation/installation/).
 
-**Note**: The `npm` package manager is going to create a `node_modules` directory to install all of your dependencies. You shouldn't commit that directory. To avoid that, you can create a [`.gitignore`](https://git-scm.com/docs/gitignore) file and add `node_modules` to it:
+- You should have a postgres user with superuser permissions. you can refer to the official [postgres documentation](https://www.postgresql.org/docs/current/role-attributes.html#:~:text=To%20create%20a%20new%20database,that%20is%20already%20a%20superuser.&text=A%20role%20must%20be%20explicitly,use%20CREATE%20ROLE%20name%20CREATEDB%20.) to create or update a role.
+
+### Setup
+
+First, you must clone this repository locally running this command:
 
 ```
-# .gitignore
-node_modules/
+git clone git@github.com:marurevi/Budget-app.git
 ```
 
-### Rubocop
+and navigate to the cloned directory:
 
-1. Add this line to the `Gemfile`
-    ```
-    gem 'rubocop', '>= 1.0', '< 2.0'
-    ```
-    *not sure how to use Gemfile? Read [this](https://bundler.io/v1.15/guides/bundler_setup.html)*.
-2. Run `bundle install`.
-3. Copy [.rubocop.yml](./.rubocop.yml) to the root directory of your project
-4. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-5. Run `rubocop`.
-6. Fix linter errors.
-7. **IMPORTANT NOTE**: feel free to research [auto-correct options for Rubocop](https://rubocop.readthedocs.io/en/latest/auto_correct/) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+```
+cd budget_app
+```
 
-### Stylelint
+### Install
 
-1. Run
+Once inside the project directory, you should install all project dependencies:
 
-   ```
-   npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-   ```
+- Install bundler:
 
-   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+```
+gem install bundler
+```
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your tem - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx stylelint "**/*.{css,scss}"` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+- Install project dependencies
 
-## RSpec/Heroku Actions
+```
+bundle install
+```
 
-Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
+### Usage
 
-Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
+You can get the app running locally by opening a local server:
 
-- [GitHub Actions with Ruby on Rails: Setting up Continuous Integration](https://gorails.com/episodes/github-actions-continuous-integration-ruby-on-rails)
-- [Deploying to Heroku from GitHub Actions](https://dev.to/heroku/deploying-to-heroku-from-github-actions-29ej)
-- [Building a Rails CI pipeline with GitHub Actions](https://boringrails.com/articles/building-a-rails-ci-pipeline-with-github-actions/)
-- [Github Actions to run Rubocop and RSpec tests on Rails with Postgres](https://dev.to/abdellani/github-actions-to-run-rubocop-and-rspec-tests-on-rails-with-postgres-47i)
+```
+bin/rails server
+```
 
-## Troubleshooting
+### Run tests
 
-- If you are building an API only Rails application
-For API only Rails application you can remove the Stylelint config. To do so remove line no. [23](https://github.com/microverseinc/linters-config/blob/f0c812753d0418288c404ed4a441a2e7370e9f4e/ror/.github/workflows/linters.yml#L23) to [36](https://github.com/microverseinc/linters-config/blob/f0c812753d0418288c404ed4a441a2e7370e9f4e/ror/.github/workflows/linters.yml#L36) from the [linter.yml]((https://github.com/microverseinc/linters-config/blob/master/ror/.github/workflows/linters.yml)) file.
+If you're on a linux-based system, you could run the executable file to run all specs:
+
+```
+bin/rspec
+```
+
+Windows users have to specify ruby in this case:
+
+```
+ruby bin/rspec
+```
+
+## Authors
+
+👤 **Menanya Morris**
+
+- GitHub: [@emmykage](https://github.com/Emmykage)
+- Twitter: [@mennydev](https://twitter.com/mennydev)
+- LinkedIn: [Menanya Morris](https://www.linkedin.com/in/morris-menanya)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella). Published under the [Creative Commons license](https://creativecommons.org/licenses/by-nc/4.0/).
+- Linters workflow created by [@anagudelogu](https://github.com/anagudelogu)
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
