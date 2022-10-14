@@ -248,12 +248,11 @@ nav ul li button {
     padding: 20px 10px 20px 10px;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(47,106,169,255);
-
-  
+    background-color: rgba(47, 106, 169, 255);
     position: relative;
   }
-  .trans{
+
+  .trans {
     flex: 3;
     color: white;
     text-align: center;
@@ -271,7 +270,7 @@ nav ul li button {
     max-width: 450px;
     opacity: 0.9;
     height: 100vh;
-    background-color: rgba(47,106,169,255);
+    background-color: rgba(47, 106, 169, 255);
   }
 
   nav ul li {
@@ -373,7 +372,7 @@ nav ul li button {
   .footer-btn {
     text-align: center;
   }
- 
+
 
   .footer-btn a {
     font-size: 22px;
@@ -392,11 +391,13 @@ nav ul li button {
   .border {
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.3);
   }
-  .tran-foot{
-    padding: 12px ;
-    background-color: rgba(96,182,37,255);
+
+  .tran-foot {
+    padding: 12px;
+    background-color: rgba(96, 182, 37, 255);
   }
-  .tran-foot a{
+
+  .tran-foot a {
     border: 2px solid white;
     padding: 5px 10px;
     color: white;
