@@ -1,0 +1,8 @@
+example_id                                    | status | run_time        |
+--------------------------------------------- | ------ | --------------- |
+./spec/integration/integration_spec.rb[1:1:1] | failed | 0.00821 seconds |
+./spec/integration/integration_spec.rb[1:1:2] | failed | 0.17788 seconds |
+./spec/integration/integration_spec.rb[1:2:1] | failed | 0.00658 seconds |
+./spec/models/group_spec.rb[1:1:1]            | passed | 0.03024 seconds |
+./spec/models/purchase_spec.rb[1:1:1]         | passed | 0.01744 seconds |
+./spec/models/purchase_spec.rb[1:1:2]         | passed | 0.0025 seconds  |
