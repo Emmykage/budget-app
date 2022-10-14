@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <%= link_to "back", groups_path %>
 
-<h1>Purchases</h1>
+
 <div class="total">
 <span>Total: <%= @total%></span>
 </div>
@@ -11,7 +11,7 @@
     <%= render purchase %>
     
   <% end %>
-  <div class='footer-btn'>
+  <div class='footer-btn tran-foot'>
   <%= link_to "add new Transaction", new_group_purchase_path %>
   </div>
 </ul>

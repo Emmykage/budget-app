@@ -206,7 +206,7 @@ nav ul li button {
 
 @media only screen and (max-width: 700px) {
   .total {
-    text-align: center;
+    text-align: right;
     font-weight: 500;
     font-size: 24px;
   }
@@ -245,13 +245,18 @@ nav ul li button {
   }
 
   nav {
-    padding: 10px 10px 10px 0;
+    padding: 20px 10px 20px 10px;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(0, 14, 58);
+    background-color: rgba(47,106,169,255);
 
-    /* padding: 12px; */
+  
     position: relative;
+  }
+  .trans{
+    flex: 3;
+    color: white;
+    text-align: center;
   }
 
   nav ul {
@@ -260,13 +265,13 @@ nav ul li button {
     list-style: none;
     position: absolute;
     padding: 30px 15px;
-    right: 0;
+    left: 0;
     top: 0;
     width: 100%;
     max-width: 450px;
     opacity: 0.9;
     height: 100vh;
-    background-color: rgb(0, 14, 58);
+    background-color: rgba(47,106,169,255);
   }
 
   nav ul li {
@@ -277,6 +282,7 @@ nav ul li button {
 
   nav .logo-div {
     flex: 0;
+    display: none;
   }
 
   a {
@@ -354,18 +360,20 @@ nav ul li button {
 
   .list-mid > div h3 {
     margin-top: 0;
-    font-size: 19px;
+    font-size: 23px;
     margin-bottom: 10px;
+    color: gray;
   }
 
   .list-mid > div span {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 19px;
+    font-weight: 500;
   }
 
   .footer-btn {
     text-align: center;
   }
+ 
 
   .footer-btn a {
     font-size: 22px;
@@ -383,5 +391,14 @@ nav ul li button {
 
   .border {
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.3);
+  }
+  .tran-foot{
+    padding: 12px ;
+    background-color: rgba(96,182,37,255);
+  }
+  .tran-foot a{
+    border: 2px solid white;
+    padding: 5px 10px;
+    color: white;
   }
 }
