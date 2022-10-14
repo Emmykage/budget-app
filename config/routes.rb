@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   devise_for :users
+  root 'splash#index'
   resources :contracts
   resources :groups, only: %i[index show new create] do
     resources :purchases, only: %i[index new create]
