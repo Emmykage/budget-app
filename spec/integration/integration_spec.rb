@@ -21,10 +21,9 @@ RSpec.describe 'Integration', type: :feature do
       visit '/groups'
       expect(page.body).to include('Remember me')
     end
-  
 
     it 'Add a new expense redirects to expense' do
-      visit "/groups"
+      visit '/groups'
       expect(page.body).to include('password')
     end
   end
