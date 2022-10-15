@@ -4,11 +4,14 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.where(user: current_user)
+    @groups = current_user.groups
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @group = Group.find(params[:id])
+    @purchases = @group.group_purchases
+  end
 
   # GET /groups/new
   def new
@@ -20,8 +23,8 @@ class GroupsController < ApplicationController
 
   # POST /groups or /groups.json
   def create
-    @group = Group.new(group_params)
-    @group.user = current_user
+    @group = current_user.groups.new(group_params)
+
     respond_to do |format|
       if @group.save
         format.html { redirect_to groups_url, notice: 'Group was successfully created.' }
@@ -48,6 +51,7 @@ class GroupsController < ApplicationController
 
   # DELETE /groups/1 or /groups/1.json
   def destroy
+    # @group = Group.find(params[:id])
     @group.destroy
 
     respond_to do |format|
@@ -65,6 +69,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def group_params
-    params.require(:group).permit(:icon, :name)
+    params.require(:group).permit(:name, :icon)
   end
 end

@@ -1,29 +1,14 @@
-<%= render 'partials/header' %>
-<% if user_signed_in? %>
-<p style="color: green"><%= notice %></p>
-<div class="group-index">
-<h1 class="index-header text">Groups</h1>
-
-<div id="groups">
-
-  <% @groups.each do |group| %>
-<div id="group">
-<img src="<%= group.icon %>">
-  <h2>
-  <%= link_to group.name, group_trades_path(group.id), class: 'text' %>
-  </h2>
-  
-  <p class="trade-sum text">Total: $<%= group.trades.sum('amount') %>
+<div class="barner-container">
+    <div class="barner">
+        <h1>Welcome to CoinApp</h1>
+        <h4><%= link_to "Click to sign in", new_user_session_path %></h4>
+        <%
+=begin%>
+ <div class="col-sign">
+            <%= link_to "Sign in", new_user_session_path %><br>
+            <%= link_to "Sign up ", new_user_registration_path%>
+        </div> 
+<%
+=end%>
+    </div>
 </div>
-  <% end %>
-
-</div>
-<%= link_to "ADD A NEW GROUP", new_group_path, class: 'new-button second' %>
-</div>
-<% else %>
-<div class="splash-buttons">
-<h1 class="trade-sum">Cash Management</h1>
-<%= link_to "Log in", '/sign_in', class: "text" %>
-<%= link_to "Sign up", '/sign_up', class: "main" %>
-</div>
-<% end %>

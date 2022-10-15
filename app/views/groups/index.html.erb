@@ -1,21 +1,21 @@
-<%= render 'partials/header' %>
-<div class="group-index">
-<h1 class="index-header text">Groups</h1>
 
-<div id="groups">
-
-  <% @groups.each do |group| %>
-<div id="group">
-<img src="<%= group.icon %>">
-  <h2>
-  <%= link_to group.name, group_trades_path(group.id), class: 'text' %>
-  </h2>
-  
-  <p class="trade-sum text">Total: $<%= group.trades.sum('amount') %>
-</div>
-  <% end %>
-
-</div>
-<%= link_to "ADD A NEW GROUP", new_group_path, class: 'new-button second' %>
-</div>
 <p style="color: green"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<ul id="groups" class="group">
+<% if @groups.empty?%>
+   <h2>Please add Categories</h2>
+  <%else%>
+ 
+   <% @groups.each do |group| %>
+    <%= render group %>
+  
+  <% end %>
+  <%end%>
+<div class='footer-btn'>
+  <%= link_to "add category", new_group_path %>
+  </div>
+</ul>
+
+

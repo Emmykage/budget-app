@@ -1,4 +1,5 @@
-<%= form_with(model: group) do |form| %>
+<div class="form-layout">
+<%= form_with model: @group, method: :post, local: true, scope: :group do |form| %>
   <% if group.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -10,9 +11,20 @@
       </ul>
     </div>
   <% end %>
- <span class="form">
-    <%= form.text_field :name, placeholder: 'Name', autofocus: true %>
-    <%= form.text_field :icon, placeholder: 'Logo (url)' %>
-    <%= form.submit "Save", class: "form-button second" %>
-</span>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class: "input-field" %>
+  </div>
+
+  <div>
+    <%= form.label :icon, style: "display: block" %>
+     <%= form.select :icon, ["👔", "🎵", "🎟️", "🏆", "⚽", "🎮", "🎭", "🎨", "🎉", "🚗", "✈️", "🚢", "🚌", "🚊", "💈", "⛺", "🏨", "🏥", "🏗️​", "🏭", "🏖️", "🍽️", "🍼", "🥂", "🍔", "🍧", "🐕‍🦺​", "👩‍👧‍👧", "👨‍👩‍👧‍👦​", "🤖"], class: "input-field" %>
+  </div>
+
+    
+  <div>
+    <%= form.submit class: 'btn' %>
+  </div>
 <% end %>
+<div>
