@@ -15,9 +15,6 @@ class GroupsTest < ApplicationSystemTestCase
     click_on 'New group'
 
     fill_in 'Icon', with: @group.icon
-    fill_in 'Name', with: @group.name
-    fill_in 'Purchase', with: @group.purchase_id
-    fill_in 'User', with: @group.user_id
     click_on 'Create Group'
 
     assert_text 'Group was successfully created'
@@ -29,9 +26,6 @@ class GroupsTest < ApplicationSystemTestCase
     click_on 'Edit this group', match: :first
 
     fill_in 'Icon', with: @group.icon
-    fill_in 'Name', with: @group.name
-    fill_in 'Purchase', with: @group.purchase_id
-    fill_in 'User', with: @group.user_id
     click_on 'Update Group'
 
     assert_text 'Group was successfully updated'
