@@ -1,0 +1,10 @@
+<h1>Editing trade</h1>
+
+<%= render "form", trade: @trade %>
+
+<br>
+
+<div>
+  <%= link_to "Show this trade", group_trade_path(id: @group.id) %> |
+  <%= link_to "Back to trades", group_trades_path %>
+</div>

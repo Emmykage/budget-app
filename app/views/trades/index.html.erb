@@ -1,0 +1,22 @@
+<div class="back-button-div">
+  <%= link_to "<", groups_path, class: "back-button main" %>
+</div>
+<p style="color: green"><%= notice %></p>
+<div class="trade-index">
+<h1 class="index-header text">Trades</h1>
+<% sum = 0 %>
+<div id="trades">
+  <% @trades.each do |trade| %>
+  <div id="trade">
+    <p class = "text">
+      <%= trade.name %>
+    </p>
+    <p class="trade-sum text">$<%= trade.amount %></p>
+  <% sum += trade.amount %>
+  </div>
+  <% end %>
+</div>
+<h3 class="total-amount">Total amount: $ <%= sum %></h3>
+
+<%= link_to "Add a new trade", new_group_trade_path, class: 'new-button second' %>
+</div>

@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<div>
+  <%= link_to "Back", group_trades_path, class: "back-button main" %>
+</div>
+<h1 class="index-header text">Detail</h1>
+<div id="trades">
+<div id="trade">
+    <p>
+      <%= @trade.name %>
+    </p>
+    <p class="trade-sum text">$<%= @trade.amount %></p>
+  </div>
+</div>
