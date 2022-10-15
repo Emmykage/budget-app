@@ -1,18 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @group %>
-<% @purchases.each do | purchase | %>
-
-<%=  purchase.name%>
-<%end%>
-<%
-=begin%>
- 
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
-</div> 
-<%
-=end%>
+<div class="back-button-div">
+  <%= link_to "<", groups_path, class: "back-button main" %>
+</div>
+<h1 class="index-header text">Detail</h1>
+<div id="trades">
+<div id="trade">
+  <img src="<%= @group.icon %>">  
+  <h2><%= @group.name %></h2>
+</div>
+</div>
