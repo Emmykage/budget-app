@@ -18,7 +18,7 @@
 
 ## Live Demo (if available)
 
-[live demo](https://morris-coin-app.herokuapp.com/)
+[live demo](https://recentcoinapp.herokuapp.com/)
 
 ## Getting Started
 
