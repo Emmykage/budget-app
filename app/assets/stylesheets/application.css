@@ -99,7 +99,10 @@ nav ul li button {
   max-width: 800px;
   width: 100%;
 }
-
+.group-header{
+  font-size: 22px;
+  font-weight: 500;
+}
 .btn {
   padding: 4px 18px;
   font-weight: 500;

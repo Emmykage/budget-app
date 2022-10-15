@@ -5,7 +5,7 @@
 <div class="total">
 <span>Total: $<%= @total%></span>
 </div>
-
+<span class="group-header"><%= @group.name%></span>
 <ul id="purchases" class="group">
   <% @purchases.each do |purchase| %>
     <%= render purchase %>
